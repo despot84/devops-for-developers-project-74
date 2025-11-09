@@ -43,7 +43,7 @@ jobs:
         run: docker-compose -f docker-compose.yml build app
 
       - name: Run tests
-        run: docker-compose --env-file .env.example -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+        run: docker-compose --env-file ./app/.env.example -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
       - name: Push Docker image
         run: docker-compose -f docker-compose.yml push app
