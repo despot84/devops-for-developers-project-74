@@ -1,5 +1,5 @@
 # Базовый образ
-FROM node:20.12.2
+FROM node:20
 
 # Рабочая директория
 WORKDIR /app
