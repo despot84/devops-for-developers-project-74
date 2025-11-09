@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  app:
+    image: node:16
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    command: ["npm", "start"]
+
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
