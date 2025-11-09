@@ -4,6 +4,10 @@ services:
       context: .
     command: ["make", "test"]
     image: despot84/js-fastify-blog
+    environment:
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_NAME: ${DATABASE_NAME}
   db:
     image: postgres:latest
     environment:
