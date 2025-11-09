@@ -10,6 +10,8 @@ services:
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_PORT: ${DATABASE_PORT}
       DATABASE_HOST: "db"
+    depends_on:
+      - db 
   db:
     image: postgres:latest
     environment:
