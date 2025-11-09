@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: docker-compose up --abort-on-container-exit
+        run: docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
       - name: Build Docker image
         run: docker-compose -f docker-compose.yml build app
