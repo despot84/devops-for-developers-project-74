@@ -11,7 +11,7 @@ COPY app/package*.json ./
 RUN npm install
 
 # Копируем все файлы проекта
-COPY . .
+COPY app/. .
 
 # Команда для запуска приложения по умолчанию
 CMD ["make", "dev"]
