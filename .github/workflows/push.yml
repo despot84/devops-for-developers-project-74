@@ -39,13 +39,15 @@ jobs:
       - name: Check Docker Compose version
         run: docker-compose --version
 
-      # - name: Run tests
-      #   run: docker-compose --env-file .env.example -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
-
       - name: Build Docker image
         run: docker-compose -f docker-compose.yml build app
 
+      - name: Run tests
+        run: docker-compose --env-file .env.example -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+
       - name: Push Docker image
-        run: |
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-          docker
+        run: docker-compose -f docker-compose.yml push app
+
+        # run: |
+        #   echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        #   docker
