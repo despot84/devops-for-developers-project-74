@@ -1,17 +1,4 @@
 services:
-  app:
-    build:
-      context: .
-    command: ["make", "test"]
-    image: despot84/js-fastify-blog
-    environment:
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_PORT: ${DATABASE_PORT}
-      DATABASE_HOST: "db"
-    depends_on:
-      - db 
   db:
     image: postgres:latest
     environment:
@@ -25,6 +12,19 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+  app:
+    build:
+      context: .
+    command: ["make", "test"]
+    image: despot84/js-fastify-blog
+    environment:
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_HOST: "db"
+    depends_on:
+      - db 
   caddy:
     image: caddy:latest
     volumes:
