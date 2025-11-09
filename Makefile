@@ -8,4 +8,4 @@ dev:
 	docker-compose up
 
 ci:
-	docker-compose --env-file .env.example -f docker-compose.yml up --abort-on-container-exit
+	docker-compose --env-file ./app/.env.example -f docker-compose.yml up --abort-on-container-exit
