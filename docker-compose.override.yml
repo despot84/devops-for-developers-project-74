@@ -1,10 +1,16 @@
 services:
   app:
-    # ports:
-    #   - "8080:8080"
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./app:/app
+    environment:
+      NODE_ENV: development
     command: ["make", "dev"]
+    depends_on:
+      db:
+        condition: service_healthy
   caddy:
     image: caddy:latest
     volumes:
