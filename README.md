@@ -22,3 +22,34 @@ https://hub.docker.com/repository/docker/despot84/js-fastify-blog
 docker-compose up
 ```
 Откройте http://localhost
+
+
+## Commands
+Setup
+
+```bash
+make setup
+```
+
+Test
+
+```bash
+make test
+```
+
+Run (development)
+```bash
+make dev
+```
+
+Build (production)
+
+```bash
+make prod-build
+```
+
+Push docker image
+
+```bash
+make prod-push
+```
