@@ -53,3 +53,36 @@ Push docker image
 ```bash
 make prod-push
 ```
+
+## Запуск приложения используя Postgres (test)
+Для запуска тестов с Postgres необходимо отредактировать файл config/config.cjs и в ключе test закомментировать использование SQLite и раскомментировать переменные окружения.
+```
+  // test: {
+  //   dialect: 'sqlite',
+  //   storage: './database.test.sqlite',
+  // },
+  test: {
+    dialect: 'postgres',
+    database: process.env.DATABASE_NAME,
+    username: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    port: process.env.DATABASE_PORT,
+    host: process.env.DATABASE_HOST,
+  },
+```
+Укажите данные для подключения к базе данных.
+```
+DATABASE_NAME=postgres
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=postgres
+DATABASE_PORT=5432
+DATABASE_HOST=localhost
+```
+
+### Запуск приложения используя Postgres (production)
+Экспортируйте переменные среды для работы с базой данных или подготовьте файл .env с переменными
+```
+make ci-build
+make push
+make start
+```
