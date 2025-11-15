@@ -4,7 +4,6 @@
 ![CI](https://github.com/despot84/devops-for-developers-project-74/actions/workflows/push.yml/badge.svg)
 
 ## Требования к системе
-- Node.js v20.x
 - Docker и Docker Compose
 - PostgreSQL
 
