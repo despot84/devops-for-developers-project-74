@@ -24,12 +24,3 @@ services:
     depends_on:
       db:
         condition: service_healthy
-  caddy:
-    image: caddy:latest
-    volumes:
-      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
-    ports:
-      - "80:80"
-      - "443:443"
-    depends_on:
-      - app      
