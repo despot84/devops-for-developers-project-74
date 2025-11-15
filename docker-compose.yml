@@ -21,6 +21,8 @@ services:
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_PORT: ${DATABASE_PORT}
       DATABASE_HOST: "db"
+    volumes:
+      - ./app:/app
     depends_on:
       db:
         condition: service_healthy
