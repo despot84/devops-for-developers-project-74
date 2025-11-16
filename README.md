@@ -6,6 +6,9 @@
 ## Требования к системе
 - Docker и Docker Compose
 
+### Инструкция по установке Docker
+[Install Docker Engine](https://docs.docker.com/engine/install/)
+
 ## Docker образ
 https://hub.docker.com/repository/docker/despot84/js-fastify-blog
 
