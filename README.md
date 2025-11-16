@@ -5,7 +5,6 @@
 
 ## Требования к системе
 - Docker и Docker Compose
-- PostgreSQL
 
 ## Docker образ
 https://hub.docker.com/repository/docker/despot84/js-fastify-blog
