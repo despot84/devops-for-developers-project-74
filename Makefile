@@ -22,11 +22,8 @@ ci:
 ci-build:
 	docker compose -f docker-compose.yml build app
 
-push:
+push prod-push:
 	docker compose -f docker-compose.yml push app
-	
+
 prod-build:
 	docker compose -f docker-compose.yml build app
-
-prod-push:
-	docker compose -f docker-compose.yml push app
